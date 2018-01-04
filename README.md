@@ -2,9 +2,9 @@
 Fixed point hysteresis filter for Mbed
 
 **_Type_** type can be:
- - `uint8_t`
- - `uint16_t` 
- - `uint32_t` but only up to 24 bits
+ - `uint8_t` or `int8_t`
+ - `uint16_t` or `int16_t`
+ - `uint32_t` or `int32_t` but only up to 23 bits
 
 # Example
 ```cpp

@@ -42,7 +42,7 @@ void Hysteresis<T>::set(T step) {
 template <class T>
 T Hysteresis<T>::add(T value) {
   T res = _prev;
-  uint32_t value_scaled =  ((value << 8) / _step);
+  int32_t value_scaled =  ((value << 8) / _step);
   uint8_t bits = ((value_scaled) >> 6) & 0b11;
 
   if (value > _prev) {
