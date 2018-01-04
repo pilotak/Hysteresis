@@ -1,1 +1,161 @@
 # Hysteresis
+Fixed point hysteresis filter for Mbed
+
+**_Type_** type can be:
+ - `uint8_t`
+ - `uint16_t` 
+ - `uint32_t` but only up to 24 bits
+
+# Example
+```cpp
+#include "mbed.h"
+#include "Hysteresis.h"
+
+ // Added samples (and result) will be initialised as uint8_t, hysteresis step 10
+Hysteresis <uint8_t> hysteresis(10);
+
+int main() {
+    printf("result: 11 = %u\n", hysteresis.add(11)); // insert new number and get result
+    printf("result: 12 = %u\n", hysteresis.add(12)); // insert new number and get result
+    printf("result: 13 = %u\n", hysteresis.add(13)); // insert new number and get result
+    printf("result: 14 = %u\n", hysteresis.add(14)); // insert new number and get result
+    printf("result: 15 = %u\n", hysteresis.add(15)); // insert new number and get result
+    printf("result: 16 = %u\n", hysteresis.add(16)); // insert new number and get result
+    printf("result: 17 = %u\n", hysteresis.add(17)); // insert new number and get result
+    printf("result: 18 = %u\n", hysteresis.add(18)); // insert new number and get result
+    printf("result: 19 = %u\n", hysteresis.add(19)); // insert new number and get result
+    printf("result: 20 = %u\n", hysteresis.add(20)); // insert new number and get result
+    printf("result: 21 = %u\n", hysteresis.add(21)); // insert new number and get result
+    printf("result: 20 = %u\n", hysteresis.add(20)); // insert new number and get result
+    printf("result: 19 = %u\n", hysteresis.add(19)); // insert new number and get result
+    printf("result: 18 = %u\n", hysteresis.add(18)); // insert new number and get result
+    printf("result: 17 = %u\n", hysteresis.add(17)); // insert new number and get result
+    printf("result: 16 = %u\n", hysteresis.add(16)); // insert new number and get result
+    printf("result: 15 = %u\n", hysteresis.add(15)); // insert new number and get result
+    printf("result: 14 = %u\n", hysteresis.add(14)); // insert new number and get result
+    printf("result: 13 = %u\n", hysteresis.add(13)); // insert new number and get result
+    printf("result: 12 = %u\n", hysteresis.add(12)); // insert new number and get result
+    printf("result: 11 = %u\n", hysteresis.add(11)); // insert new number and get result
+    printf("result: 12 = %u\n", hysteresis.add(12)); // insert new number and get result
+    printf("result: 13 = %u\n", hysteresis.add(13)); // insert new number and get result
+    printf("result: 14 = %u\n", hysteresis.add(14)); // insert new number and get result
+    printf("result: 15 = %u\n", hysteresis.add(15)); // insert new number and get result
+    printf("result: 16 = %u\n", hysteresis.add(16)); // insert new number and get result
+    printf("result: 15 = %u\n", hysteresis.add(15)); // insert new number and get result
+    printf("result: 14 = %u\n", hysteresis.add(14)); // insert new number and get result
+    printf("result: 15 = %u\n", hysteresis.add(15)); // insert new number and get result
+    printf("result: 16 = %u\n", hysteresis.add(16)); // insert new number and get result
+    printf("result: 15 = %u\n", hysteresis.add(15)); // insert new number and get result
+    printf("result: 14 = %u\n", hysteresis.add(14)); // insert new number and get result
+    printf("result: 15 = %u\n", hysteresis.add(15)); // insert new number and get result
+    printf("result: 16 = %u\n", hysteresis.add(16)); // insert new number and get result
+    printf("result: 17 = %u\n", hysteresis.add(17)); // insert new number and get result
+    printf("result: 18 = %u\n", hysteresis.add(18)); // insert new number and get result
+    printf("result: 11 = %u\n", hysteresis.add(17)); // insert new number and get result
+    printf("result: 16 = %u\n", hysteresis.add(16)); // insert new number and get result
+    printf("result: 15 = %u\n", hysteresis.add(15)); // insert new number and get result
+    printf("result: 14 = %u\n", hysteresis.add(14)); // insert new number and get result
+    printf("result: 15 = %u\n", hysteresis.add(15)); // insert new number and get result
+    printf("result: 16 = %u\n", hysteresis.add(16)); // insert new number and get result
+    printf("result: 15 = %u\n", hysteresis.add(15)); // insert new number and get result
+    printf("result: 14 = %u\n", hysteresis.add(14)); // insert new number and get result
+    printf("result: 15 = %u\n", hysteresis.add(15)); // insert new number and get result
+    printf("result: 16 = %u\n", hysteresis.add(16)); // insert new number and get result
+    printf("result: 16 = %u\n", hysteresis.get());   // get last result, without adding a newone
+
+    return 0;
+}
+```
+
+## Output
+> result: 11 = 10
+> 
+> result: 12 = 10
+> 
+> result: 13 = 10
+> 
+> result: 14 = 10
+> 
+> result: 15 = 10
+> 
+> result: 16 = 10
+> 
+> result: 17 = 10
+> 
+> result: 18 = 20
+> 
+> result: 19 = 20
+> 
+> result: 20 = 20
+> 
+> result: 21 = 20
+> 
+> result: 20 = 20
+> 
+> result: 19 = 20
+> 
+> result: 18 = 20
+> 
+> result: 17 = 20
+> 
+> result: 16 = 20
+> 
+> result: 15 = 20
+> 
+> result: 14 = 20
+> 
+> result: 13 = 20
+> 
+> result: 12 = 10
+> 
+> result: 11 = 10
+> 
+> result: 12 = 10
+> 
+> result: 13 = 10
+> 
+> result: 14 = 10
+> 
+> result: 15 = 10
+> 
+> result: 16 = 10
+> 
+> result: 15 = 10
+> 
+> result: 14 = 10
+> 
+> result: 15 = 10
+> 
+> result: 16 = 10
+> 
+> result: 15 = 10
+> 
+> result: 14 = 10
+> 
+> result: 15 = 10
+> 
+> result: 16 = 10
+> 
+> result: 17 = 10
+> 
+> result: 18 = 20
+> 
+> result: 17 = 20
+> 
+> result: 16 = 20
+> 
+> result: 15 = 20
+> 
+> result: 14 = 20
+> 
+> result: 15 = 20
+> 
+> result: 16 = 20
+> 
+> result: 15 = 20
+> 
+> result: 14 = 20
+> 
+> result: 15 = 20
+> 
+> result: 16 = 20
