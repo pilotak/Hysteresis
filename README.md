@@ -61,7 +61,7 @@ int main() {
     printf("result: 14 = %u\n", hysteresis.add(14)); // insert new number and get result
     printf("result: 15 = %u\n", hysteresis.add(15)); // insert new number and get result
     printf("result: 16 = %u\n", hysteresis.add(16)); // insert new number and get result
-    printf("result: 16 = %u\n", hysteresis.get());   // get last result, without adding a newone
+    printf("result: %u\n", hysteresis.get());   // get last result, without adding a newone
 
     return 0;
 }
@@ -158,4 +158,4 @@ int main() {
 > 
 > result: 15 = 20
 > 
-> result: 16 = 20
+> result: 20
