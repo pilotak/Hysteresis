@@ -6,16 +6,16 @@
 template <class T>
 class Hysteresis {
  public:
-  Hysteresis(uint16_t step);
+  Hysteresis(uint16_t step = 10);
   virtual ~Hysteresis(void);
 
   T add(T value);
   T get();
-  void set(T step);
+  void set(uint16_t step);
 
  private:
   T _prev;
-  T _step;
+  uint16_t _step;
 };
 
 template <class T>
@@ -34,7 +34,7 @@ T Hysteresis<T>::get() {
 }
 
 template <class T>
-void Hysteresis<T>::set(T step) {
+void Hysteresis<T>::set(uint16_t step) {
   _prev = 0;
   _step = step;
 }
