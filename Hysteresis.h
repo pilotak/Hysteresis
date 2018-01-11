@@ -12,6 +12,7 @@ class Hysteresis {
   T add(T value);
   T get();
   void set(uint16_t step);
+  void prev(T value);
 
  private:
   T _prev;
@@ -64,5 +65,10 @@ T Hysteresis<T>::add(T value) {
 
   _prev = res;
   return res;
+}
+
+template <class T>
+void Hysteresis<T>::prev(T value) {
+  _prev = value;
 }
 #endif
