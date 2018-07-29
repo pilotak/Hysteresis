@@ -7,7 +7,7 @@ void setup() {
 	Serial.begin(9600);
 
 	// or you can change step here
-	// hysteresis.step(10);
+	// hysteresis.set(10);
 
 	Serial.print("result: 11 = ");
 	Serial.println(hysteresis.add(11)); // insert new number and get result
