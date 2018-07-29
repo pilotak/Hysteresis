@@ -1,12 +1,12 @@
 # Hysteresis
-Fixed point hysteresis filter for Mbed
+Fixed point hysteresis filter for Arduino & Mbed
 
 **_Type_** type can be:
  - `uint8_t` or `int8_t`
  - `uint16_t` or `int16_t`
  - `uint32_t` or `int32_t` but only up to 23 bits
 
-# Example
+# Mbed example
 ```cpp
 #include "mbed.h"
 #include "Hysteresis.h"

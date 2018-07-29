@@ -25,7 +25,9 @@ SOFTWARE.
 #ifndef HYSTERESIS_H
 #define HYSTERESIS_H
 
-#include "mbed.h"
+#if defined(__MBED__)
+  #include "mbed.h"
+#endif
 
 template <class T>
 class Hysteresis {
