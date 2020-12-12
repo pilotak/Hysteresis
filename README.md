@@ -18,7 +18,7 @@ Please see `examples` folder
 #include "mbed.h"
 #include "Hysteresis.h"
 
- // Added samples (and result) will be initialised as uint8_t, hysteresis step 10
+// Added samples (and result) will be initialised as uint8_t, hysteresis step 10
 Hysteresis <uint8_t> hysteresis(10);
 
 int main() {
