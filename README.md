@@ -1,4 +1,6 @@
 # Hysteresis
+![build](https://github.com/pilotak/Hysteresis/workflows/build/badge.svg)
+
 Fixed point hysteresis filter for Arduino & Mbed
 
 **_Type_** type can be:
