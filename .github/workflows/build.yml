@@ -33,7 +33,7 @@ jobs:
         run: |
           pio ci --lib="." --board=uno --board=zero --board=attiny85 --board=esp8285 --board=esp32dev --board=bluepill_f103c8
         env:
-          PLATFORMIO_CI_SRC: examples/MovingAverageFloat
+          PLATFORMIO_CI_SRC: examples/basic
 
   arduino-build:
     strategy:
@@ -77,7 +77,7 @@ jobs:
 
       - name: Prepare
         run: |
-          cp ./MovingAverageFloat.h ./examples/MovingAverageFloat
+          cp ./Hysteresis.h ./examples/basic
 
       - name: Set up Python
         if: ${{ matrix.board == 'ESP32' }}
@@ -102,4 +102,4 @@ jobs:
           ARDUINO_BOARD_MANAGER_ADDITIONAL_URLS: ${{ matrix.url }}
 
       - name: Compile
-        run: arduino-cli compile --fqbn ${{ matrix.fqbn }} ./examples/MovingAverageFloat
+        run: arduino-cli compile --fqbn ${{ matrix.fqbn }} ./examples/basic
