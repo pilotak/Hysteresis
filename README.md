@@ -1,5 +1,7 @@
 # Hysteresis
-![build](https://github.com/pilotak/Hysteresis/workflows/build/badge.svg)
+[![build](https://github.com/pilotak/Hysteresis/workflows/build/badge.svg)](https://github.com/pilotak/Hysteresis/actions) 
+[![Framework Badge Arduino](https://img.shields.io/badge/framework-arduino-00979C.svg)](https://arduino.cc)
+[![Framework Badge mbed](https://img.shields.io/badge/framework-mbed-008fbe.svg)](https://os.mbed.com/)
 
 Fixed point hysteresis filter for Arduino & Mbed
 
@@ -8,7 +10,10 @@ Fixed point hysteresis filter for Arduino & Mbed
  - `uint16_t` or `int16_t`
  - `uint32_t` or `int32_t` but only up to 23 bits
 
-# Mbed example
+## Arduino example
+Please see `examples` folder
+
+## Mbed example
 ```cpp
 #include "mbed.h"
 #include "Hysteresis.h"
